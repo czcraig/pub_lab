@@ -7,6 +7,9 @@ class Customer
     @wallet_balance = wallet_balance
   end
 
+
+
+
   def spend_money(amount)
     @wallet_balance -= amount
   end

@@ -30,25 +30,32 @@ class CustomerTest < MiniTest::Test
 
   def test_deducting_drink_price_from_wallet_balance
     @customer1.buy_drink(@pub, @drink1)
+    assert_equal(45.50, @customer1.wallet_balance)
+    assert_equal(504.50, @pub.till_balance())
+  end
+
+
+
+  # the CUSTOMER is buying a DRINK from the PUB.
+
+
+  # customer1 wallet_balance -= £4.50
+  # pub - till_balance += £4.50
+
+  #
+
+
+  def test_deducting_drink_price_from_wallet_balance
+    @customer1.buy_drink(@pub, @drink1)
     assert_equal(504.50, @pub.till_balance())
     assert_equal(45.50, @customer1.wallet_balance())
   end
 
+  # def test_can_spend_money
+  #   @customer1.spend_money(3.5)
+  #   assert_equal(46.5, @customer1.wallet_balance())
+  # end
 
-  def test_can_spend_money
-    @customer1.spend_money(3.5)
-    assert_equal(46.5, @customer1.wallet_balance())
-  end
-
-
-# the CUSTOMER is buying a DRINK from the PUB.
-
-# customer1 = wallet_balance of 50.
-# drink1 = price of 4.50
-
-# wallet_balance - drink1 price
-
-# drink1 price + till_balance
 
 
 
