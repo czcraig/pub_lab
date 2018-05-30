@@ -8,9 +8,8 @@ class Pub
     @drinks_menu = drinks_menu
   end
 
-
-  def get_drink_price(price)
-    return @drink.price
+  def increase_till(amount)
+    @till_balance += amount
   end
 
 

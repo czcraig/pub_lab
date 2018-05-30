@@ -8,6 +8,7 @@ class PubTest < MiniTest::Test
     @drink1 = Drink.new("Tennants", 4.50)
     @drink2 = Drink.new("Strongbow", 4.25)
     @drink3 = Drink.new("Buckfast", 6.50)
+
     @pub = Pub.new("The Standing Order", 500, [@drink1, @drink2, @drink3])
   end
 
@@ -15,15 +16,14 @@ class PubTest < MiniTest::Test
     assert_equal("The Standing Order", @pub.pub_name)
   end
 
+  def test_get_pubs_till_balance
+    assert_equal(500, @pub.till_balance)
+  end
+
   def test_drinks_menu
     assert_equal([@drink1, @drink2, @drink3], @pub.drinks_menu)
   end
 
-  def test_get_drink_price
-    assert_equal(6.50, @drink3.price())
-  end
-
-  
 
 
 
