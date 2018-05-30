@@ -9,5 +9,14 @@ class Pub
   end
 
 
+  def get_drink_price(price)
+    return @drink.price
+  end
+
+
+
+
+
+
 
 end
